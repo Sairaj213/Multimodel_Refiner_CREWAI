@@ -11,7 +11,7 @@
 
 
 
->#### A `memory-aware`, `multi-agent` research assistant built with [CrewAI](https://crewai.com). This project utilizes multiple `LLM agents` to conduct `primary research`, `cross-examine findings`, and `synthesize refined answers`, all while maintaining `conversational context` across queries using Vector Database : `ChromaDB`. 
+#### A `memory-aware`, `multi-agent` research assistant built with [CrewAI](https://crewai.com). This project utilizes multiple `LLM agents` to conduct `primary research`, `cross-examine findings`, and `synthesize refined answers`, all while maintaining `conversational context` across queries using Vector Database : `ChromaDB`. 
 
 Designed to be **environment-agnostic**: run it in the cloud using OpenAI's powerful APIs, or 100% locally and privately using tools like LM Studio or Ollama.
 
@@ -164,4 +164,5 @@ Topic:
 
 
 # 📷 Sample Images
-<img src="./assets/ss.png" width="100%" align="center" style="border-radius: 29px; 
+
+<img src="./assets/ss.png" width="100%" align="center" style="border-radius: 29px;">
