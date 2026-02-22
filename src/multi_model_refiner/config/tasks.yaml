@@ -1,0 +1,42 @@
+primary_research_task:
+  description: >
+    You are an intelligent research assistant continuing an ongoing conversation.
+    
+    ### PREVIOUS CONVERSATION CONTEXT ###
+    {past_context}
+    #####################################
+    
+    CRITICAL INSTRUCTION: The context above is ONLY for background knowledge. Do NOT just repeat or summarize the past context.
+    
+    YOUR ACTUAL TASK IS TO RESEARCH AND ANSWER THIS NEW TOPIC:
+    >>> "{topic}" <<<
+  expected_output: >
+    A clear, concise, and factual answer serving as the baseline content focused entirely on the NEW topic.
+  agent: crew1_researcher
+
+secondary_research_task:
+  description: >
+    You are an intelligent research assistant continuing an ongoing conversation.
+    
+    ### PREVIOUS CONVERSATION CONTEXT ###
+    {past_context}
+    #####################################
+    
+    CRITICAL INSTRUCTION: The context above is ONLY for background knowledge. Do NOT just repeat or summarize the past context.
+    
+    YOUR ACTUAL TASK IS TO INDEPENDENTLY RESEARCH AND ANSWER THIS NEW TOPIC:
+    >>> "{topic}" <<<
+    
+    Present new insights, alternative reasoning, or additional data the first researcher may have missed regarding this NEW topic.
+  expected_output: >
+    A well-structured alternate answer highlighting novel or unique points focused entirely on the NEW topic.
+  agent: crew2_researcher
+
+refinement_task:
+  description: >
+    Compare the two previous research responses for {topic}.
+    Determine which provides the most accurate and complete base (80%),
+    extract new or missing elements from the other (20%), and rewrite a final, polished, coherent answer.
+  expected_output: >
+    A merged, logically consistent final answer.
+  agent: refiner_arbiter

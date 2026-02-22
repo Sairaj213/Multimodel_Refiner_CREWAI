@@ -1,0 +1,37 @@
+[project]
+name = "multi_model_refiner"
+version = "0.1.0"
+description = "multi_model_refiner using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai>=0.30.0",
+    "crewai-tools>=0.1.7",
+    "litellm>=1.75.3",
+    "python-dotenv>=1.0.0",
+
+    # Added for session memory
+    "chromadb>=0.4.24",
+    "langchain_community>=0.0.29",
+
+    # Added to fix the ModuleNotFoundError
+    "langchain-openai>=0.0.5",
+    
+    # Added to fix the sentence-transformers ImportError
+    "sentence-transformers",
+]
+
+[project.scripts]
+multi_model_refiner = "multi_model_refiner.main:run"
+run_crew = "multi_model_refiner.main:run"
+train = "multi_model_refiner.main:train"
+replay = "multi_model_refiner.main:replay"
+test = "multi_model_refiner.main:test"
+run_with_trigger = "multi_model_refiner.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
