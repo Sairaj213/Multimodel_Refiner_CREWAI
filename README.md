@@ -30,23 +30,23 @@ Designed to be **environment-agnostic**: run it in the cloud using OpenAI's powe
 
 ```markdown-tree
 📁 Multimodel_Refiner_CREWAI/
-├── pyproject.toml                  # Project metadata and dependency management (for uv)
-├── README.md                       # Project documentation and setup guide
-├── .env                            # Environment variables (OpenAI API keys, local server URLs)
-├── .gitignore                      # Git ignore file (excludes .venv, memory DB, etc.)
+├── pyproject.toml                
+├── README.md                   
+├── .env                          
+├── .gitignore                    
 |
-├── 📁 src/                         # --- Source Code Directory ---
-│   └── 📁 multi_model_refiner/     # Main Python package
-│       ├── main.py                 # Application entry point (interactive terminal loop and kickoff)
-│       ├── crew.py                 # Defines the MultiModelRefinerCrew, LLM config, Agents, and Tasks
+├── 📁 src/                       
+│   └── 📁 multi_model_refiner/     
+│       ├── main.py              
+│       ├── crew.py                
 │       │
-│       ├── 📁 config/              # --- CrewAI Configurations ---
-│       │   ├── agents.yaml         # Defines roles, goals, and backstories for the research agents
-│       │   └── tasks.yaml          # Defines descriptions and expected outputs for research tasks
+│       ├── 📁 config/             
+│       │   ├── agents.yaml         
+│       │   └── tasks.yaml          
 │       │
-│       └── 📁 tools/               # --- Custom Agent Tools ---
-│           ├── __init__.py         # Makes the tools directory a discoverable Python package
-│           └── custom_tool.py      # ChromaDB session memory tool (save/retrieve/clear logic)
+│       └── 📁 tools/              
+│           ├── __init__.py       
+│           └── custom_tool.py     
 
 ```
 
